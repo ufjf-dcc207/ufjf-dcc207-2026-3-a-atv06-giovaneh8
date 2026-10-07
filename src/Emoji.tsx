@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Emoji.css';
 
 
@@ -14,21 +15,24 @@ const EMOJI_MAP = new Map<EMOJI_KEYS,
 
 
 export default function Emoji() {
-    let status: EMOJI_KEYS = "dead";
+
+    const [status, setStatus] = useState<EMOJI_KEYS>("sick");
+
+
 
     function HappyClick() {
         console.log("Status: ", status);
-    console.log("Happy!!");
-    status = "happy";
-    console.log("Status: ", status);
-}
+        console.log("Happy!!");
+        setStatus("happy");
+        console.log("Status: ", status);
+    }
     return (
         <>
             <div className="emoji" >
                 {EMOJI_MAP.get(status) || "🤔​"}
             </div>
-
-
+<br />
+<br />
             <div className="acoes" >
                 <button onClick={HappyClick}>Happy</button>
             </div>
