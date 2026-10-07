@@ -5,9 +5,8 @@ function App() {
 
   return (
     <>
-    <h1>Emoji</h1>
-    <br />
-    <Emoji/>
+      <h1>Emoji</h1>
+      <Emoji />
     </>
   )
 }
